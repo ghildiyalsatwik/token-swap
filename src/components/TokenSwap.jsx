@@ -10,6 +10,15 @@ export default function TokenSwap({swapped, setSwapped}) {
 
     const [token2, setToken2] = useState(tokens[1].mint)
 
+    function flipTokens() {
+
+        const temp = token2
+        
+        setToken2(token1)
+
+        setToken1(temp)
+    }
+
     return (
 
         <div>
@@ -38,6 +47,12 @@ export default function TokenSwap({swapped, setSwapped}) {
                 ))}
             
             </select>
+
+            <br></br>
+
+            <button onClick={flipTokens}>Flip tokens</button>
+
+            <br></br>
 
             
             <br></br>
